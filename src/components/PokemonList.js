@@ -7,7 +7,7 @@ import "./Pokemon.css";
 
 export default function PokemonList({ pokemon, loading }) {
 	const [currentPage, setCurrentPage] = useState(1);
-	const [pokemonPerPage] = useState(15);
+	const [pokemonPerPage] = useState(16);
 
 	const indexOfLastPokemon = currentPage * pokemonPerPage;
 	const indexOfFirstPokemon = indexOfLastPokemon - pokemonPerPage;
@@ -21,20 +21,13 @@ export default function PokemonList({ pokemon, loading }) {
 		setCurrentPage(pageNumber);
 	};
 
-	if (loading) {
-		return <h2>Loading</h2>;
-	}
-
 	return (
 		<div className="pokemon-list">
-			{pokemon.map((item) => (
-				<PokemonCard key={item.id} name={item.name} />
-			))}
+			<PokemonCard loading={loading} pokemon={currentPokemons} />
 
 			<Pagination
 				pokemonPerPage={pokemonPerPage}
-				pokemon={pokemon}
-				currentPokemons={currentPokemons}
+				totalPokemon={pokemon.length}
 				paginate={paginate}
 			/>
 		</div>
