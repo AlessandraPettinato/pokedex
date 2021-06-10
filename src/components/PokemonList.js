@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 
 import PokemonCard from "./PokemonCard";
 import Pagination from "./Pagination";
-import PokemonDetails from "./PokemonDetails";
 
 import { getPokemon } from "./services/pokemon";
 
