@@ -4,9 +4,11 @@ export default function PokemonCard({ pokemon, loading }) {
 	}
 	return (
 		<div>
-			<ul>
+			<ul className="card-list">
 				{pokemon.map((pokemon, index) => (
-					<li key={index}>{pokemon.name}</li>
+					<li key={index} className="pokemon-card">
+						<p className="pokemon-name">{pokemon.name}</p>
+					</li>
 				))}
 			</ul>
 		</div>

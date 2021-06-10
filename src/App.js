@@ -11,7 +11,7 @@ function App({ pokemon }) {
 			<div className="pokedex">
 				<Router>
 					<Route
-						path="/:id"
+						path="/:name"
 						render={(routeProps) => (
 							<PokemonDetails routeProps={routeProps} pokemon={pokemon} />
 						)}

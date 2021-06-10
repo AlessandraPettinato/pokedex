@@ -3,14 +3,15 @@ import { useState, useEffect } from "react";
 
 import PokemonCard from "./PokemonCard";
 import Pagination from "./Pagination";
-
 import { getPokemon } from "./services/pokemon";
+
+import "./Pokemon.css";
 
 export default function PokemonList() {
 	const [pokemon, setPokemon] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const [currentPage, setCurrentPage] = useState(1);
-	const [pokemonPerPage] = useState(10);
+	const [pokemonPerPage] = useState(15);
 
 	const url = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
@@ -27,7 +28,10 @@ export default function PokemonList() {
 
 	const indexOfLastPokemon = currentPage * pokemonPerPage;
 	const indexOfFirstPokemon = indexOfLastPokemon - pokemonPerPage;
-	const currentPokemon = pokemon.slice(indexOfFirstPokemon, indexOfLastPokemon);
+	const currentPokemons = pokemon.slice(
+		indexOfFirstPokemon,
+		indexOfLastPokemon
+	);
 
 	const paginate = (pageNumber) => {
 		setCurrentPage(pageNumber);
@@ -44,8 +48,8 @@ export default function PokemonList() {
 	};
 
 	return (
-		<div>
-			<PokemonCard loading={loading} pokemon={currentPokemon} />
+		<div className="pokemon-list">
+			<PokemonCard loading={loading} pokemon={currentPokemons} />
 			<Pagination
 				pokemonPerPage={pokemonPerPage}
 				totalPokemon={pokemon.length}
