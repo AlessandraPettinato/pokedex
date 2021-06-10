@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { GiChest } from "react-icons/gi";
 
 import PokemonCard from "./PokemonCard";
 import Pagination from "./Pagination";
@@ -23,6 +24,11 @@ export default function PokemonList({ pokemon, loading }) {
 
 	return (
 		<div className="pokemon-list">
+			<div className="header">
+				<h1>Sandra's Pokedex</h1>
+
+				<GiChest className="chest" />
+			</div>
 			<PokemonCard loading={loading} pokemon={currentPokemons} />
 
 			<Pagination

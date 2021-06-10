@@ -34,6 +34,7 @@ function App() {
 		);
 		setPokemon(_pokemon);
 	};
+
 	return (
 		<div className="poke-container">
 			<div className="pokedex">

@@ -10,9 +10,9 @@
 .pokedex {
 	display: grid;
 	align-items: center;
-	background-color: #f82430;
+	background-color: #cd2532;
 	width: 50rem;
-	height: 55rem;
+	height: 60rem;
 	border-radius: 1.5rem;
 	border: solid black;
 	box-shadow: 3px 3px;
@@ -74,14 +74,24 @@ a {
 	border: solid black;
 	box-shadow: 3px 3px;
 	border-radius: 5px;
-	background-color: #2aaa5d;
+	background-color: #4ab7a1;
 	width: 8rem;
 	height: 8rem;
 	padding: 1rem;
 	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: flex-end;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.empty-pokeball {
+	font-size: 2rem;
+	margin: 0;
+}
+
+.full-pokeball {
+	font-size: 2rem;
+	margin: 0;
+	color: #cd2532;
 }
 
 button {
@@ -105,6 +115,16 @@ p {
 	font-family: "Roboto Mono";
 }
 
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 4rem;
+}
+
+.chest {
+	font-size: 5rem;
+}
+
 .details-container {
 	display: grid;
 	grid-template-columns: auto;
@@ -119,17 +139,19 @@ p {
 	border: solid black;
 	box-shadow: 3px 3px;
 	border-radius: 5px;
-	background-color: #2aaa5d;
+	background-color: #4ab7a1;
 	width: 20rem;
 	height: 20rem;
 	padding: 1rem;
 }
 
-.pokemon-name {
+h1 {
 	font-family: "Press Start 2P", cursive;
 	font-size: 1.5rem;
 	align-self: center;
 	justify-self: center;
+	margin-top: 1.5rem;
+	text-transform: capitalize;
 }
 
 .details-img {
