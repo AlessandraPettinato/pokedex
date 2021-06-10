@@ -1,6 +1,6 @@
-export default function Pagination({ pokemonPerPage, pokemon, paginate }) {
+export default function Pagination({ pokemonPerPage, totalPokemon, paginate }) {
 	const pageNumbers = [];
-	const totalPokemon = pokemon.length;
+
 	for (let i = 1; i <= Math.ceil(totalPokemon / pokemonPerPage); i++) {
 		pageNumbers.push(i);
 	}
@@ -13,7 +13,7 @@ export default function Pagination({ pokemonPerPage, pokemon, paginate }) {
 						<li key={number} className="page-item">
 							<a
 								onClick={() => paginate(number)}
-								href="/"
+								href="#"
 								className="page-link"
 							>
 								{number}
