@@ -1,54 +1,40 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import PokemonCard from "./PokemonCard";
 import Pagination from "./Pagination";
 
-import { getPokemon } from "./services/pokemon";
+import "./Pokemon.css";
 
-export default function PokemonList() {
-	const [pokemon, setPokemon] = useState([]);
-	const [loading, setLoading] = useState(false);
+export default function PokemonList({ pokemon, loading }) {
 	const [currentPage, setCurrentPage] = useState(1);
-	const [pokemonPerPage] = useState(10);
-
-	const url = "https://pokeapi.co/api/v2/pokemon/?limit=151";
-
-	useEffect(() => {
-		const getPokemon = async () => {
-			setLoading(true);
-			const res = await axios.get(url);
-			setPokemon(res.data.results);
-			await loadPokemonDetails(res.data.results);
-			setLoading(false);
-		};
-		getPokemon();
-	}, []);
+	const [pokemonPerPage] = useState(15);
 
 	const indexOfLastPokemon = currentPage * pokemonPerPage;
 	const indexOfFirstPokemon = indexOfLastPokemon - pokemonPerPage;
-	const currentPokemon = pokemon.slice(indexOfFirstPokemon, indexOfLastPokemon);
+
+	const currentPokemons = pokemon.slice(
+		indexOfFirstPokemon,
+		indexOfLastPokemon
+	);
 
 	const paginate = (pageNumber) => {
 		setCurrentPage(pageNumber);
 	};
 
-	const loadPokemonDetails = async (data) => {
-		let _pokemon = await Promise.all(
-			data.map(async (pokemon) => {
-				let pokemonDetails = await getPokemon(pokemon);
-				return pokemonDetails;
-			})
-		);
-		setPokemon(_pokemon);
-	};
+	if (loading) {
+		return <h2>Loading</h2>;
+	}
 
 	return (
-		<div>
-			<PokemonCard loading={loading} pokemon={currentPokemon} />
+		<div className="pokemon-list">
+			{pokemon.map((item) => (
+				<PokemonCard key={item.id} name={item.name} />
+			))}
+
 			<Pagination
 				pokemonPerPage={pokemonPerPage}
-				totalPokemon={pokemon.length}
+				pokemon={pokemon}
+				currentPokemons={currentPokemons}
 				paginate={paginate}
 			/>
 		</div>

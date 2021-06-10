@@ -1,14 +1,9 @@
-export default function PokemonCard({ pokemon, loading }) {
-	if (loading) {
-		return <h2>Loading</h2>;
-	}
+export default function PokemonCard({ name }) {
 	return (
-		<div>
-			<ul>
-				{pokemon.map((pokemon, index) => (
-					<li key={index}>{pokemon.name}</li>
-				))}
-			</ul>
+		<div className="card-list">
+			<div className="pokemon-card">
+				<p>{name}</p>
+			</div>
 		</div>
 	);
 }

@@ -1,6 +1,6 @@
 import { withRouter } from "react-router-dom";
 
-function PokemonDetails({ routeProps, pokemon }) {
+function PokemonDetails({ routeProps, pokemon, id }) {
 	const foundCard = pokemon.find(
 		(card) => card.id === +routeProps.match.params.id
 	);
