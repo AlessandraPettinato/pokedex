@@ -1,0 +1,11 @@
+.poke-container {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
+
+.pokedex {
+	background-color: #f82430;
+	width: 400px;
+	height: 500px;
+}
