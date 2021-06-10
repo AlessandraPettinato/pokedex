@@ -1,6 +1,6 @@
-export default function Pagination({ pokemonPerPage, totalPokemon, paginate }) {
+export default function Pagination({ pokemonPerPage, pokemon, paginate }) {
 	const pageNumbers = [];
-
+	const totalPokemon = pokemon.length;
 	for (let i = 1; i <= Math.ceil(totalPokemon / pokemonPerPage); i++) {
 		pageNumbers.push(i);
 	}
