@@ -1,12 +1,13 @@
-import "./App.css";
+import "./components/Pokemon.css";
 
 import PokemonList from "./components/PokemonList";
 
 function App() {
 	return (
-		<div className="App">
-			<p>Hello from App</p>
-			<PokemonList />
+		<div className="poke-container">
+			<div className="pokedex">
+				<PokemonList />
+			</div>
 		</div>
 	);
 }
