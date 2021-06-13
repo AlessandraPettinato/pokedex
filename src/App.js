@@ -7,10 +7,12 @@ import "./components/Pokemon.css";
 import PokemonList from "./components/PokemonList";
 import PokemonDetails from "./components/PokemonDetails";
 import { getPokemon } from "./components/services/pokemon";
+import CapturedPokemons from "./components/CapturedPokemons";
 
 function App() {
 	const [pokemon, setPokemon] = useState([]);
 	const [loading, setLoading] = useState(false);
+	const [capturedPokemons, setCapturedPokemons] = useState([]);
 
 	const url = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
@@ -34,6 +36,15 @@ function App() {
 		);
 		setPokemon(_pokemon);
 	};
+
+	const removePokemonFromList = (removedPokemon) =>
+		pokemon.filter((pokemon) => pokemon !== removedPokemon);
+
+	const capture = (pokemon) => () => {
+		setCapturedPokemons([...capturedPokemons, pokemon]);
+		setPokemon(removePokemonFromList(pokemon));
+	};
+
 	return (
 		<div className="poke-container">
 			<div className="pokedex">
@@ -45,9 +56,21 @@ function App() {
 						)}
 					/>
 					<Route
+						path="/catchEmAll"
+						render={() => (
+							<CapturedPokemons capturedPokemons={capturedPokemons} />
+						)}
+					/>
+					<Route
 						exact
 						path="/"
-						render={() => <PokemonList pokemon={pokemon} loading={loading} />}
+						render={() => (
+							<PokemonList
+								pokemon={pokemon}
+								loading={loading}
+								capture={capture}
+							/>
+						)}
 					/>
 				</Router>
 			</div>
