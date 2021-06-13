@@ -12,6 +12,7 @@ import CapturedPokemons from "./components/CapturedPokemons";
 function App() {
 	const [pokemon, setPokemon] = useState([]);
 	const [loading, setLoading] = useState(false);
+	const [capturedPokemons, setCapturedPokemons] = useState([]);
 
 	const url = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
@@ -36,6 +37,14 @@ function App() {
 		setPokemon(_pokemon);
 	};
 
+	const removePokemonFromList = (removedPokemon) =>
+		pokemon.filter((pokemon) => pokemon !== removedPokemon);
+
+	const capture = (pokemon) => () => {
+		setCapturedPokemons([...capturedPokemons, pokemon]);
+		setPokemon(removePokemonFromList(pokemon));
+	};
+
 	return (
 		<div className="poke-container">
 			<div className="pokedex">
@@ -46,7 +55,12 @@ function App() {
 							<PokemonDetails routeProps={routeProps} pokemon={pokemon} />
 						)}
 					/>
-					<Route path="catchEmAll" render={CapturedPokemons} />
+					<Route
+						path="/catchEmAll"
+						render={() => (
+							<CapturedPokemons capturedPokemons={capturedPokemons} />
+						)}
+					/>
 					<Route
 						exact
 						path="/"
@@ -54,7 +68,7 @@ function App() {
 							<PokemonList
 								pokemon={pokemon}
 								loading={loading}
-								setPokemon={setPokemon}
+								capture={capture}
 							/>
 						)}
 					/>
