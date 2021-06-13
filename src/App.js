@@ -7,6 +7,7 @@ import "./components/Pokemon.css";
 import PokemonList from "./components/PokemonList";
 import PokemonDetails from "./components/PokemonDetails";
 import { getPokemon } from "./components/services/pokemon";
+import CapturedPokemons from "./components/CapturedPokemons";
 
 function App() {
 	const [pokemon, setPokemon] = useState([]);
@@ -45,10 +46,17 @@ function App() {
 							<PokemonDetails routeProps={routeProps} pokemon={pokemon} />
 						)}
 					/>
+					<Route path="catchEmAll" render={CapturedPokemons} />
 					<Route
 						exact
 						path="/"
-						render={() => <PokemonList pokemon={pokemon} loading={loading} />}
+						render={() => (
+							<PokemonList
+								pokemon={pokemon}
+								loading={loading}
+								setPokemon={setPokemon}
+							/>
+						)}
 					/>
 				</Router>
 			</div>

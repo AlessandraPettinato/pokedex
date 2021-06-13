@@ -1,16 +1,7 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { CgPokemon } from "react-icons/cg";
 
-export default function PokemonCard({ pokemon, loading }) {
-	const [catchEm, setCatchEm] = useState(false);
-
-	const handleCatchEm = () => {
-		setCatchEm(!catchEm);
-	};
-
-	console.log("clicked");
-
+export default function PokemonCard({ pokemon, loading, capture }) {
 	if (loading) {
 		return <h2>Loading</h2>;
 	}
@@ -25,10 +16,7 @@ export default function PokemonCard({ pokemon, loading }) {
 						alt=""
 					/>
 					<>
-						<CgPokemon
-							onClick={handleCatchEm}
-							className={catchEm ? "full-pokeball" : "empty-pokeball"}
-						/>
+						<CgPokemon onClick={capture(pokemon)} className="empty-pokeball" />
 					</>
 					<p style={{ fontWeight: "bold", textTransform: "capitalize" }}>
 						{pokemon.name}
