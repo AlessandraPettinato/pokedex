@@ -1,7 +1,17 @@
 import { Link } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 
-export default function CapturedPokemons({ capturedPokemons }) {
+export default function CapturedPokemons({
+	capturedPokemons,
+	setCapturedPokemons,
+}) {
+	const handleRemove = (clicked) => {
+		const filterPokemons = capturedPokemons.filter(
+			(pokemon) => pokemon.name !== clicked
+		);
+		setCapturedPokemons(filterPokemons);
+	};
+
 	return (
 		<>
 			<div className="captured-container">
@@ -14,7 +24,10 @@ export default function CapturedPokemons({ capturedPokemons }) {
 						capturedPokemons.map((pokemon, index) => (
 							<li className="pokemon-card" key={index}>
 								<>
-									<AiOutlineClose className="delete-pokemon" />
+									<AiOutlineClose
+										onClick={() => handleRemove(pokemon.name)}
+										className="delete-pokemon"
+									/>
 								</>
 								<img
 									className="list-img"
