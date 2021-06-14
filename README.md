@@ -9,6 +9,9 @@ The solution had to be submitted within 1 week since the day it was first assign
 #### Built with
 
 • [React](https://reactjs.org/)
+• [HTML](https://html.spec.whatwg.org/) 
+• [CSS](https://www.w3.org/Style/CSS/Overview.en.html)
+• [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) 
 
 #### Installation
 
