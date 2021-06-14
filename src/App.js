@@ -61,6 +61,7 @@ function App() {
 							<CapturedPokemons
 								routeProps={routeProps}
 								capturedPokemons={capturedPokemons}
+								setCapturedPokemons={setCapturedPokemons}
 							/>
 						)}
 					/>
