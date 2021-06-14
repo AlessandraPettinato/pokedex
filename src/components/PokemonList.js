@@ -24,24 +24,25 @@ export default function PokemonList({ pokemon, loading, capture }) {
 	};
 
 	return (
-		<div className="pokemon-list">
+		<>
 			<div className="header">
-				<h1>Sandra's Pokedex</h1>
+				<h1>Pokedex</h1>
 				<Link to="catchEmAll">
 					<GiChest className="chest" />
 				</Link>
 			</div>
-			<PokemonCard
-				loading={loading}
-				pokemon={currentPokemons}
-				capture={capture}
-			/>
-
+			<div className="pokemon-list">
+				<PokemonCard
+					loading={loading}
+					pokemon={currentPokemons}
+					capture={capture}
+				/>
+			</div>
 			<Pagination
 				pokemonPerPage={pokemonPerPage}
 				totalPokemon={pokemon.length}
 				paginate={paginate}
 			/>
-		</div>
+		</>
 	);
 }

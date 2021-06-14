@@ -57,8 +57,11 @@ function App() {
 					/>
 					<Route
 						path="/catchEmAll"
-						render={() => (
-							<CapturedPokemons capturedPokemons={capturedPokemons} />
+						render={(routeProps) => (
+							<CapturedPokemons
+								routeProps={routeProps}
+								capturedPokemons={capturedPokemons}
+							/>
 						)}
 					/>
 					<Route
