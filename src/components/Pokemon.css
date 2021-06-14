@@ -215,3 +215,54 @@ span {
 	justify-content: center;
 	align-items: flex-start;
 }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+	.poke-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.pokedex {
+		width: 20rem;
+		height: auto;
+	}
+
+	.header {
+		margin: 1rem;
+	}
+
+	h1 {
+		font-size: 1rem;
+	}
+
+	.chest-caption {
+		display: none;
+	}
+
+	.chest {
+		font-size: 3rem;
+	}
+
+	.pagination {
+		margin: 0 0.5rem;
+	}
+
+	.card-list {
+		grid-template-columns: auto;
+	}
+
+	.pokemon-card-details {
+		width: 15rem;
+		height: 15rem;
+	}
+
+	.details-container {
+		grid-template-rows: auto;
+	}
+
+	p {
+		margin: 0 1rem;
+		text-align: justify;
+	}
+}
