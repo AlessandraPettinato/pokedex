@@ -45,11 +45,6 @@ function App() {
 		setPokemon(removePokemonFromList(pokemon));
 	};
 
-	const showAllPokemons = () => {
-		setCapturedPokemons([]);
-		setPokemon([...capturedPokemons, ...pokemon]);
-	};
-
 	return (
 		<div className="poke-container">
 			<div className="pokedex">
@@ -62,12 +57,10 @@ function App() {
 					/>
 					<Route
 						path="/catchEmAll"
-						render={(routeProps) => (
+						render={() => (
 							<CapturedPokemons
-								routeProps={routeProps}
 								capturedPokemons={capturedPokemons}
 								setCapturedPokemons={setCapturedPokemons}
-								loading={loading}
 							/>
 						)}
 					/>

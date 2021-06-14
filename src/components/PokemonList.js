@@ -29,6 +29,11 @@ export default function PokemonList({
 		setCurrentPage(pageNumber);
 	};
 
+	const showAllPokemons = () => {
+		setCapturedPokemons([]);
+		setPokemon([...capturedPokemons, ...pokemon]);
+	};
+
 	return (
 		<>
 			<div className="header">
