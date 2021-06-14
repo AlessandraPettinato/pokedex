@@ -4,6 +4,8 @@ This repository contains the solution of an exercise provided by the team of [Tr
 
 The solution had to be submitted within 1 week since the day it was first assigned.
 
+![alt text](https://res.cloudinary.com/dg5lakmem/image/upload/v1623706122/Untitled_design_1_izfalu.png)
+
 #### Built with
 
 • [React](https://reactjs.org/)
