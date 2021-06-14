@@ -14,9 +14,8 @@ export default function CapturedPokemons({
 
 	return (
 		<>
+			<h1>Sandra's pokemons</h1>
 			<div className="captured-container">
-				<h1 className="captured-pokemons">Sandra's pokemons</h1>
-
 				<ul className="card-list">
 					{capturedPokemons.length === 0 ? (
 						<p>No pokemons here yet :( Go catch'em all!</p>
@@ -34,12 +33,16 @@ export default function CapturedPokemons({
 									src={pokemon.sprites.front_default}
 									alt=""
 								/>
-								<p style={{ fontWeight: "bold", textTransform: "capitalize" }}>
+								<p
+									style={{
+										fontWeight: "bold",
+										textTransform: "capitalize",
+										fontSize: "1.5rem",
+										marginBottom: "0.5rem",
+									}}
+								>
 									{pokemon.name}
 								</p>
-								<Link to={`/pokemon/${pokemon.id}`}>
-									<button className="show-details">Show details</button>
-								</Link>
 							</li>
 						))
 					)}

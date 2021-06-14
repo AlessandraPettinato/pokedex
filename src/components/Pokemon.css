@@ -108,7 +108,8 @@ a {
 }
 
 .show-details,
-.back-to {
+.back-to,
+.show-all-pokemons {
 	border: solid black;
 	box-shadow: 3px 3px;
 	border-radius: 5px;
@@ -120,11 +121,16 @@ a {
 	cursor: pointer;
 }
 
-.back-to {
+.back-to,
+.show-all-pokemons {
 	width: 7rem;
 	height: 4rem;
 	font-size: 15px;
 	margin-top: 2rem;
+}
+
+.show-all-pokemons {
+	justify-self: center;
 }
 
 .list-img {
@@ -144,6 +150,14 @@ p {
 
 .chest {
 	font-size: 5rem;
+}
+
+.chest-caption {
+	align-self: baseline;
+	justify-self: end;
+	margin: 0 7rem;
+	font-size: 1.2rem;
+	font-family: "Roboto Mono";
 }
 
 .details-container {
@@ -200,9 +214,4 @@ span {
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
-}
-
-.captured-pokemons {
-	position: absolute;
-	top: 4rem;
 }

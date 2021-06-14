@@ -7,7 +7,13 @@ import Pagination from "./Pagination";
 
 import "./Pokemon.css";
 
-export default function PokemonList({ pokemon, loading, capture }) {
+export default function PokemonList({
+	pokemon,
+	loading,
+	capture,
+	capturedPokemons,
+	showAllPokemons,
+}) {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [pokemonPerPage] = useState(16);
 
@@ -31,6 +37,14 @@ export default function PokemonList({ pokemon, loading, capture }) {
 					<GiChest className="chest" />
 				</Link>
 			</div>
+			<figcaption className="chest-caption">Caught Pokemons</figcaption>
+			<>
+				{capturedPokemons.length > 0 ? (
+					<button className="show-all-pokemons" onClick={showAllPokemons}>
+						Show all Pokemons
+					</button>
+				) : null}
+			</>
 			<div className="pokemon-list">
 				<PokemonCard
 					loading={loading}

@@ -45,6 +45,11 @@ function App() {
 		setPokemon(removePokemonFromList(pokemon));
 	};
 
+	const showAllPokemons = () => {
+		setCapturedPokemons([]);
+		setPokemon([...capturedPokemons, ...pokemon]);
+	};
+
 	return (
 		<div className="poke-container">
 			<div className="pokedex">
@@ -62,9 +67,11 @@ function App() {
 								routeProps={routeProps}
 								capturedPokemons={capturedPokemons}
 								setCapturedPokemons={setCapturedPokemons}
+								loading={loading}
 							/>
 						)}
 					/>
+
 					<Route
 						exact
 						path="/"
@@ -73,6 +80,8 @@ function App() {
 								pokemon={pokemon}
 								loading={loading}
 								capture={capture}
+								capturedPokemons={capturedPokemons}
+								showAllPokemons={showAllPokemons}
 							/>
 						)}
 					/>
