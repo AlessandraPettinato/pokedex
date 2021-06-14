@@ -26,7 +26,7 @@ export default function PokemonList({ pokemon, loading, capture }) {
 	return (
 		<div className="pokemon-list">
 			<div className="header">
-				<h1>Sandra's Pokedex</h1>
+				<h1>Pokedex</h1>
 				<Link to="catchEmAll">
 					<GiChest className="chest" />
 				</Link>
