@@ -50,6 +50,7 @@ export default function PokemonList({
 					loading={loading}
 					pokemon={currentPokemons}
 					capture={capture}
+					key={pokemon.id}
 				/>
 			</div>
 			<Pagination

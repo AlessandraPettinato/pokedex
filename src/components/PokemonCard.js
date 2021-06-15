@@ -9,8 +9,8 @@ export default function PokemonCard({ pokemon, loading, capture }) {
 	return (
 		<ul className="card-list">
 			{pokemon.map((pokemon, index) => (
-				<>
-					<li className="pokemon-card" key={index}>
+				<div key={index}>
+					<li className="pokemon-card">
 						<CgPokemon onClick={capture(pokemon)} className="empty-pokeball" />
 						<img
 							className="list-img"
@@ -31,7 +31,7 @@ export default function PokemonCard({ pokemon, loading, capture }) {
 							<button className="show-details">Show details</button>
 						</Link>
 					</li>
-				</>
+				</div>
 			))}
 		</ul>
 	);
