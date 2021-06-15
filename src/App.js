@@ -45,6 +45,11 @@ function App() {
 		setPokemon(removePokemonFromList(pokemon));
 	};
 
+	const showAllPokemons = () => {
+		setCapturedPokemons([]);
+		setPokemon([...capturedPokemons, ...pokemon]);
+	};
+
 	return (
 		<div className="poke-container">
 			<div className="pokedex">
