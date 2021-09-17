@@ -15,7 +15,7 @@ export default function PokemonList({
 	showAllPokemons,
 }) {
 	const [currentPage, setCurrentPage] = useState(1);
-	const [pokemonPerPage] = useState(16);
+	const [pokemonPerPage] = useState(8);
 
 	const indexOfLastPokemon = currentPage * pokemonPerPage;
 	const indexOfFirstPokemon = indexOfLastPokemon - pokemonPerPage;
@@ -31,13 +31,12 @@ export default function PokemonList({
 
 	return (
 		<>
-			<div className="header">
+			<header className="header">
 				<h1>Pokedex</h1>
 				<Link to="catchEmAll">
 					<GiChest className="chest" />
 				</Link>
-			</div>
-			<figcaption className="chest-caption">Caught Pokemons</figcaption>
+			</header>
 			<>
 				{capturedPokemons.length > 0 ? (
 					<button className="show-all-pokemons" onClick={showAllPokemons}>

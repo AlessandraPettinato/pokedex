@@ -18,13 +18,17 @@ body {
 
 .pokedex {
 	display: grid;
+	grid-template-rows: 0.5fr 2fr 0.5fr;
 	align-items: center;
 	background-color: #cd2532;
-	width: 80rem;
-	height: 95rem;
+	width: 70rem;
 	border-radius: 1.5rem;
 	border: solid black;
 	box-shadow: 3px 3px;
+}
+
+.pagination-container {
+	grid-row: 3;
 }
 
 .pagination {
@@ -75,6 +79,7 @@ a {
 
 .card-list {
 	display: grid;
+	grid-rows: 2;
 	grid-template-columns: auto auto auto auto;
 	grid-gap: 0.5rem;
 	margin-top: 2rem;
@@ -87,8 +92,8 @@ a {
 	box-shadow: 3px 3px;
 	border-radius: 5px;
 	background-color: #4ab7a1;
-	width: 15rem;
-	height: 15rem;
+	width: 13rem;
+	height: 13rem;
 	padding: 0.5rem;
 	display: flex;
 	flex-direction: column;
@@ -129,6 +134,10 @@ a {
 	margin-top: 2rem;
 }
 
+.back-to {
+	grid-row: 3;
+}
+
 .show-all-pokemons {
 	justify-self: center;
 }
@@ -144,6 +153,7 @@ p {
 
 .header {
 	display: flex;
+	grid-row: 1;
 	justify-content: space-between;
 	margin: 0 10rem;
 }
@@ -152,19 +162,9 @@ p {
 	font-size: 5rem;
 }
 
-.chest-caption {
-	align-self: baseline;
-	justify-self: end;
-	margin: 0 7rem;
-	font-size: 1.2rem;
-	font-family: "Roboto Mono";
-}
-
 .details-container {
 	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: 1fr 3fr;
-	margin-top: 5rem;
+	grid-template-rows: 1fr 0.1fr;
 	justify-content: center;
 }
 
@@ -180,6 +180,7 @@ p {
 	padding: 1rem;
 }
 
+.pokemon-details,
 h1 {
 	font-family: "Press Start 2P", cursive;
 	font-size: 1.5rem;
@@ -234,10 +235,6 @@ span {
 
 	h1 {
 		font-size: 1rem;
-	}
-
-	.chest-caption {
-		display: none;
 	}
 
 	.chest {
