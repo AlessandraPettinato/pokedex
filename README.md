@@ -10,11 +10,11 @@ The goal was to fetch data from the [Pokemon API](https://pokeapi.co/) and rende
 
 The users can to catch a Pokemon, store it locally, and delete it whenever they need. 
 
-#### Built with
+## Built with
 
 • [React](https://reactjs.org/)
 
-#### Installation
+## Installation
 
 Clone this repository.
 
@@ -28,7 +28,7 @@ This command installs a package and any packages that it depends on.
 
 By default, this command will install all modules listed as dependencies in package.json.
 
-#### How to run
+## How to run
 
 To enter development mode:
 
