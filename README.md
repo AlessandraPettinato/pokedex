@@ -4,7 +4,11 @@ This repository contains the solution of an exercise provided by the team of [Tr
 
 The solution had to be submitted within 1 week since the day it was first assigned.
 
-![alt text](https://res.cloudinary.com/dg5lakmem/image/upload/v1623706122/Untitled_design_1_izfalu.png)
+![alt text](https://res.cloudinary.com/dg5lakmem/image/upload/v1631921267/Untitled_design_3_uu3s1t.png)
+
+The goal was to fetch data from the [Pokemon API](https://pokeapi.co/) and render them on-screen. The Pokemon displayed are the original 151. Thanks to a pagination system they are methodically divided into sections.  
+
+The users can to catch a Pokemon, store it locally, and delete it whenever they need. 
 
 #### Built with
 
