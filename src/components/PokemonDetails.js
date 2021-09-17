@@ -9,7 +9,7 @@ function PokemonDetails({ routeProps, pokemon }) {
 
 	return (
 		<>
-			<h1 style={{ marginTop: "4rem" }}>Pokemon details</h1>
+			<h1 className="pokemon-details">Pokemon details</h1>
 			<div className="details-container">
 				<div className="pokemon-card-details">
 					<img

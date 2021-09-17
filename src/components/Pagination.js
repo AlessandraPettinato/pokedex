@@ -6,7 +6,7 @@ export default function Pagination({ pokemonPerPage, totalPokemon, paginate }) {
 	}
 
 	return (
-		<div>
+		<div className="pagination-container">
 			<nav>
 				<ul className="pagination">
 					{pageNumbers.map((number) => (
