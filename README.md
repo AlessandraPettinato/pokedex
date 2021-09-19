@@ -8,7 +8,7 @@ The solution had to be submitted within 1 week since the day it was first assign
 
 The goal was to fetch data from the [Pokemon API](https://pokeapi.co/) and render them on-screen. The Pokemon displayed are the original 151. Thanks to a pagination system they are methodically divided into sections.  
 
-The users can to catch a Pokemon, store it locally, and delete it whenever they need. 
+The users can catch a Pokemon, store it locally, and delete it whenever they need. 
 
 ## Built with
 
